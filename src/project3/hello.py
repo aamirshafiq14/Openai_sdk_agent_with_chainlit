@@ -1,13 +1,12 @@
 import chainlit as cl
+from chatbot import AIbot
 
-@cl.on_start_message
-async def on_start_message(message: cl.Message):
-    # Your custom logic goes here...
+@cl.on_chat_start
+async def chat_start():
 
-    # Send a response back to the user
+    # Send a greeting to the user
     await cl.Message(
-        content=f"Received: {message.content}",
-    ).send()
+        content= "I am your AI Assistant. How can I help you today?").send()
 
 
 @cl.on_message
@@ -15,6 +14,7 @@ async def main(message: cl.Message):
     # Your custom logic goes here...
 
     # Send a response back to the user
+    user_input = message.content
+    response = AIbot(user_input)
     await cl.Message(
-        content=f"Received: {message.content}",
-    ).send()
+        content=f"{response}").send()
