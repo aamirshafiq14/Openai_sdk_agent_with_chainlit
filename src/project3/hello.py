@@ -15,6 +15,6 @@ async def main(message: cl.Message):
 
     # Send a response back to the user
     user_query = message.content
-    response = AIbot(user_query)
+    response =await AIbot(user_query)
     await cl.Message(
         content=f"{response}").send()

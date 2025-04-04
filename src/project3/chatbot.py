@@ -28,5 +28,5 @@ async def AIbot(user_query):
         starting_agent= my_agent,
         input= user_query,
     )
-    print(result.final_output)
+    return(result.final_output)
 asyncio.run(AIbot("Hello"))
