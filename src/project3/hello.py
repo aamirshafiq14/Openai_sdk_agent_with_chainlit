@@ -14,7 +14,7 @@ async def main(message: cl.Message):
     # Your custom logic goes here...
 
     # Send a response back to the user
-    user_input = message.content
-    response = AIbot(user_input)
+    user_query = message.content
+    response = AIbot(user_query)
     await cl.Message(
         content=f"{response}").send()

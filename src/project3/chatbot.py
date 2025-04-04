@@ -29,4 +29,4 @@ async def AIbot(user_query):
         input= user_query,
     )
     print(result.final_output)
-asyncio.run(main("Hello"))
+asyncio.run(AIbot("Hello"))
